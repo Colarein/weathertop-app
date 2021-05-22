@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+#{list items:stations, as:'station'}
+<section class="ui segment">
+  <h2 class="ui header">
+  ${station.name}
+  </h2>
+  <h3 class="ui header">
+  <section class="ui four inverted stackable cards">
+    <div class="yellow card">
+      <div class="image">
+        <img>
+        <h4>Latest Temp C: ${station.latestTemperatureC} C</h4>
+    </div>
+  </div>
+  <div class="yellow card">
+    <div class="image">
+      <img>
+  <h4>Latest Temp F: ${station.latestTempF}</h4>
+    </div>
+  </div>
+  <div class="yellow card">
+    <div class="image">
+      <img>
+  <h4>Latest Pressure: ${station.latestPressure}</h4>
+    </div>
+  </div>
+  <div class="yellow card">
+    <div class="image">
+      <img>
+  <h4>Latest Wind Speed: ${station.latestWindSpeed}</h4>
+    </div>
+  </div>
+  #{listfeatures station:station /}
+  <a href="/stations/${station.id}" class="ui icon button">
+    <i class="icon folder open"></i>
+  </a>
+  <a href="/dashboard/deletestation/${station.id}" class="ui icon button">
+    <i class="icon trash"></i>
+  </a>
+
+  </section>
+</section>
+#{/list}
+#{addstation /}
+<h3/>
