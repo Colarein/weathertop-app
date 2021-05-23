@@ -18,8 +18,8 @@ public class Station extends Model
   public List <Reading> readings = new ArrayList<Reading>();
 
   public double latestTemperatureC;
-  public double latestTempF;
-  public int latestPressure;
+  public double latestTemperatureF;
+  public double latestPressure;
   public double latestWindSpeed;
 
 

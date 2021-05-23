@@ -9,9 +9,9 @@ GET     /about                                  About.index
 GET     /admin                                  Admin.index
 GET     /stations/{id}                          StationCtrl.index
 GET     /stations/{id}/deletereading/{readingid} StationCtrl.deleteReading
-GET     /dashboard/deletestation/{id}           Dashboard.deleteStation
+GET     /dashboard/deletestation/{id}           StationCtrl.deleteStation
 POST    /stations/{id}/addreading               StationCtrl.addReading
-POST    /dashboard/addstation                   Dashboard.addStation
+POST    /dashboard/addstation                   StationCtrl.addStation
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

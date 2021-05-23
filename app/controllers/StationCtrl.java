@@ -1,7 +1,5 @@
 package controllers;
 
-import java.util.List;
-
 import models.Station;
 import models.Reading;
 import play.Logger;
@@ -10,17 +8,17 @@ import utils.StationAnalytics;
 
 public class StationCtrl extends Controller
 {
-    public static void index(Long id)
+    public static void index(Long id, double latestTemperatureC, double latestTemperatureF)
     {
         Station station = Station.findById(id);
-        //Reading latestReading = StationAnalytics.getLatestReading(station.readings);
-        station.latestTemperatureC = StationAnalytics.getLatestTemperatureC(station.readings);
-        //station.latestTemperatureC = latestReading.temperature;
-        //station.latestTempF = latestReading.temperature * 1.8 + 32 ;
-        //station.latestPressure = latestReading.pressure;
-        //station.latestWindSpeed = latestReading.windSpeed;
-
         Logger.info ("Station id = " + id);
+
+        Reading latestReading = StationAnalytics.getLatestReading(station.readings);
+        station.latestTemperatureC = StationAnalytics.getLatestTemperatureC(station.readings);
+        station.latestTemperatureF = StationAnalytics.getLatestTemperatureF(station.readings);
+        station.latestPressure = StationAnalytics.getLatestPressure(station.readings);
+        station.latestWindSpeed = StationAnalytics.getLatestWindSpeed(station.readings);
+
         render("station.html", station);
     }
 
@@ -40,5 +38,21 @@ public class StationCtrl extends Controller
         station.save();
         reading.delete();
         render("station.html", station);
+    }
+
+    public static void deleteStation (Long id)
+    {
+        Station station = Station.findById(id);
+        Logger.info ("Removing" + station.name);
+        station.delete();
+        redirect ("/dashboard");
+    }
+
+    public static void addStation (String name)
+    {
+        Station station = new Station (name);
+        Logger.info ("Adding a new Station " + name);
+        station.save();
+        redirect ("/dashboard");
     }
 }
