@@ -53,4 +53,11 @@ public class StationAnalytics {
         }
         return latestWindSpeed;
     }
+    public static int getLatestCode(List<Reading> readings) {
+        int latestCode = 0;
+        if (readings.size() > 0) {
+            latestCode = readings.get(readings.size() - 1).code;
+        }
+        return latestCode;
+    }
 }

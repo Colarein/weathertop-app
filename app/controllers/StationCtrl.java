@@ -8,16 +8,18 @@ import utils.StationAnalytics;
 
 public class StationCtrl extends Controller
 {
-    public static void index(Long id, double latestTemperatureC, double latestTemperatureF)
+    public static void index(Long id, double latestTemperatureC, double latestTemperatureF, int latestCode)
     {
         Station station = Station.findById(id);
         Logger.info ("Station id = " + id);
 
         Reading latestReading = StationAnalytics.getLatestReading(station.readings);
+
         station.latestTemperatureC = StationAnalytics.getLatestTemperatureC(station.readings);
         station.latestTemperatureF = StationAnalytics.getLatestTemperatureF(station.readings);
         station.latestPressure = StationAnalytics.getLatestPressure(station.readings);
         station.latestWindSpeed = StationAnalytics.getLatestWindSpeed(station.readings);
+        station.latestCode = StationAnalytics.getLatestCode(station.readings);
 
         render("station.html", station);
     }

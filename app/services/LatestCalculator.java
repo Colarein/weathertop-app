@@ -11,11 +11,14 @@ public class LatestCalculator {
     }
 
     public static double latestWindSpeed(double windSpeed){
-        if (windSpeed >=1 || windSpeed <= 5){
+        if (windSpeed == 1){
+            return 0;
+        }
+        else if (windSpeed >1 || windSpeed <= 5){
             return 1;
         }
         else if (windSpeed >=6 || windSpeed <= 11){
-                return 2;
+            return 2;
         }
         else if (windSpeed >=12 || windSpeed <= 19){
             return 3;
@@ -44,5 +47,33 @@ public class LatestCalculator {
         else{
             return 11;
         }
+    }
+
+    public static int latestCode(int code)
+    {
+       if (code == 100) {
+           return 100;
+       }
+       else if(code == 200){
+           return 200;
+       }
+       else if(code == 300){
+           return 300;
+       }
+       else if(code == 400){
+           return 400;
+       }
+       else if(code == 500){
+           return 500;
+       }
+       else if(code == 600){
+           return 600;
+       }
+       else if(code == 700){
+           return 700;
+       }
+       else {
+           return 800 ;
+       }
     }
 }

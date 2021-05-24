@@ -20,6 +20,8 @@ public class Dashboard extends Controller {
         station.latestTemperatureF = LatestCalculator.latestTemperatureF(latestReading.temperature);
         station.latestPressure = latestReading.pressure;
         station.latestWindSpeed = LatestCalculator.latestWindSpeed(latestReading.windSpeed);
+        station.latestCode = LatestCalculator.latestCode(latestReading.code);
+
       }
     }
         render("dashboard.html", stations);
