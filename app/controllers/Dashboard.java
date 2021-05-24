@@ -1,6 +1,7 @@
 package controllers;
 import java.util.List;
 
+import models.Member;
 import services.LatestCalculator;
 import models.Station;
 import models.Reading;

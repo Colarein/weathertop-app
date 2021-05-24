@@ -1,10 +1,13 @@
 package controllers;
 
+import models.Member;
 import models.Station;
 import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 import utils.StationAnalytics;
+
+import java.util.List;
 
 public class StationCtrl extends Controller
 {
@@ -12,6 +15,8 @@ public class StationCtrl extends Controller
     {
         Station station = Station.findById(id);
         Logger.info ("Station id = " + id);
+        Member member = Accounts.getLoggedInMember();
+        List<Station> stations = member.stations;
 
         Reading latestReading = StationAnalytics.getLatestReading(station.readings);
 
@@ -46,6 +51,9 @@ public class StationCtrl extends Controller
     {
         Station station = Station.findById(id);
         Logger.info ("Removing" + station.name);
+        Member member = Accounts.getLoggedInMember();
+        member.stations.remove(station);
+        member.save();
         station.delete();
         redirect ("/dashboard");
     }
@@ -54,7 +62,9 @@ public class StationCtrl extends Controller
     {
         Station station = new Station (name);
         Logger.info ("Adding a new Station " + name);
-        station.save();
+        Member member = Accounts.getLoggedInMember();
+        member.stations.add(station);
+        member.save();
         redirect ("/dashboard");
     }
 }
