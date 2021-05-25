@@ -58,9 +58,9 @@ public class StationCtrl extends Controller
         redirect ("/dashboard");
     }
 
-    public static void addStation (String name)
+    public static void addStation (String name, double latitude, double longitude)
     {
-        Station station = new Station (name);
+        Station station = new Station (name, latitude, longitude);
         Logger.info ("Adding a new Station " + name);
         Member member = Accounts.getLoggedInMember();
         member.stations.add(station);
