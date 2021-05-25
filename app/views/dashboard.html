@@ -17,6 +17,15 @@
         Lng : ${station.longitude}</h4>
       </div>
     </div>
+    <div class="ui card">
+      <h4>Weather <br><br>
+        <i class="big icons">
+          <i class="green cloud sun rain icon"></i></i>
+        <br>
+      ${station.weatherDescription}
+      </h4>
+    </div>
+    </div>
       <div class="ui card">
           <div class="ui header">
         <h4> Temp <br><br>
@@ -28,6 +37,15 @@
         ${station.latestTemperatureF} F</h4>
     </div>
       </div>
+    <div class="ui card">
+      <h4>Wind <br><br>
+        <i class="big icons">
+          <i class="blue wind icon"></i></i>
+        <br>
+      ${station.beaufortConversion} <br>
+      ${station.latestWindSpeed} bft</h4>
+    </div>
+    </div>
       <div class="ui card">
         <h4>Pressure <br><br>
         <i class="big icons">
@@ -36,24 +54,6 @@
           ${station.latestPressure} hpa
           </h4>
         </div>
-      <div class="ui card">
-        <h4>Wind <br><br>
-        <i class="big icons">
-          <i class="blue wind icon"></i></i>
-          <br>
-          ${station.beaufortConversion} <br>
-          ${station.latestWindSpeed} bft</h4>
-        </div>
-      </div>
-      <div class="ui card">
-        <h4>Weather <br><br>
-        <i class="big icons">
-          <i class="green cloud sun rain icon"></i></i>
-          <br>
-          ${station.weatherDescription}
-          </h4>
-        </div>
-      </div>
 
   #{listfeatures station:station /}
   <a href="/stations/${station.id}" class="ui icon button">
