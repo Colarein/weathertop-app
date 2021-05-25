@@ -14,18 +14,9 @@ public class StationCtrl extends Controller
     public static void index(Long id)
     {
         Station station = Station.findById(id);
-        Logger.info ("Station id = " + id);
+        Logger.info ("Station id = " + station.name);
         Member member = Accounts.getLoggedInMember();
         List<Station> stations = member.stations;
-
-        Reading latestReading = StationAnalytics.getLatestReading(station.readings);
-
-        station.latestTemperatureC = StationAnalytics.getLatestTemperatureC(station.readings);
-        station.latestTemperatureF = StationAnalytics.getLatestTemperatureF(station.readings);
-        station.latestPressure = StationAnalytics.getLatestPressure(station.readings);
-        station.latestWindSpeed = StationAnalytics.getLatestWindSpeed(station.readings);
-        station.latestCode = StationAnalytics.getLatestCode(station.readings);
-
         render("station.html", station);
     }
 
