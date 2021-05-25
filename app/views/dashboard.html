@@ -7,10 +7,11 @@
 <h3 class="ui segment">
   <section class="ui six yellow cards">
     <div class="ui card">
-      <h4 class="ui header"> ${station.name} </h4>
+      <h3 class="ui header"> ${station.name} </h3>
       <p>
         <br>
-        <i class="map marker icon"></i>
+        <i class="big icons">
+          <i class="map marker icon"></i></i>
         <br>
         Lat : ${station.latitude} <br>
         Lng : ${station.longitude}
@@ -18,37 +19,36 @@
       </div>
     </div>
       <div class="ui card">
-        <div class="image">
-          <img>
           <h4 class="ui header"></h4>
+          <i class="big icons">
+            <i class ="temperature high icon"></i>
+          </i>
         <h4> Temp <br> <br>
         ${station.latestTemperatureC} C<br>
         ${station.latestTemperatureF} F</h4>
     </div>
-      </div>
-      <div class="yellow card">
-        <div class="image">
-      <img>
+      <div class="ui card">
           <h4>Pressure <br><br>
           ${station.latestPressure} hpa
           </h4>
         </div>
-      </div>
-      <div class="yellow card">
-        <i class="wind icon"></i>
+      <div class="ui card">
+        <i class="big icons">
+          <i class="wind icon"></i></i>
           <h4>Wind <br><br>
           ${station.beaufortConversion} <br>
           ${station.latestWindSpeed} bft</h4>
         </div>
       </div>
-      <div class="yellow card">
-        <div class="image">
-          <img>
+      <div class="ui card">
+        <i class="big icons">
+          <i class="cloud sun rain icon"></i></i>
           <h4>Weather <br><br>
           ${station.weatherDescription}
           </h4>
         </div>
       </div>
+
   #{listfeatures station:station /}
   <a href="/stations/${station.id}" class="ui icon button">
     <i class="icon folder open"></i>
