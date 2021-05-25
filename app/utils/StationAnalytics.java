@@ -33,13 +33,13 @@ public class StationAnalytics {
 //        }
 //        return latestPressure;
 //    }
-//    public static double getLatestWindSpeed(List<Reading> readings) {
-//        Double latestWindSpeed = null;
-//        if (readings.size() > 0) {
-//            latestWindSpeed = readings.get(readings.size() - 1).windSpeed;
-//        }
-//        return latestWindSpeed;
-//    }
+    public static double getLatestWindSpeed(List<Reading> readings) {
+        Double latestWindSpeed = null;
+        if (readings.size() > 0) {
+            latestWindSpeed = readings.get(readings.size() - 1).windSpeed;
+        }
+        return latestWindSpeed;
+    }
 //    public static int getLatestCode(List<Reading> readings) {
 //        int latestCode = 0;
 //        if (readings.size() > 0) {
