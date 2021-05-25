@@ -15,65 +15,65 @@ public class LatestCalculator {
             return "Calm";
         }
         else if (windSpeed >1 || windSpeed <= 5){
-            return "Calm";
+            return "Light Air";
         }
         else if (windSpeed >=6 || windSpeed <= 11){
-            return "Calm";
+            return "Light Breeze";
         }
         else if (windSpeed >=12 || windSpeed <= 19){
-            return "3";
+            return "Gentle Breeze";
         }
         else if (windSpeed >=20 || windSpeed <= 28){
-            return "4";
+            return "Moderate Breeze";
         }
         else if (windSpeed >=29 || windSpeed <= 38){
-            return "5";
+            return "Fresh Breeze";
         }
         else if (windSpeed >=39 || windSpeed <= 49){
-            return "6";
+            return "Strong Breeze";
         }
         else if (windSpeed >=50 || windSpeed <= 61){
-            return "7";
+            return "Near Gale";
         }
         else if (windSpeed >=62 || windSpeed <= 74){
-            return "8";
+            return "Gale";
         }
         else if (windSpeed >=75 || windSpeed <= 88){
-            return "9";
+            return "Severe Gale";
         }
         else if (windSpeed >=89 || windSpeed <= 102){
-            return "10";
+            return "Strong Storm";
         }
         else{
-            return "11";
+            return "Violent Storm";
         }
     }
 
     public static String weatherDescription (int code)
     {
        if (code == 100) {
-           return "100";
+           return "Clear";
        }
        else if(code == 200){
-           return "200";
+           return "Partial Clouds";
        }
        else if(code == 300){
-           return "300";
+           return "Cloudy";
        }
        else if(code == 400){
-           return "400";
+           return "Light Showers";
        }
        else if(code == 500){
-           return "500";
+           return "Heavy Showers";
        }
        else if(code == 600){
-           return "Smelly";
+           return "Rain";
        }
        else if(code == 700){
-           return "700";
+           return "Snow";
        }
        else {
-           return "800" ;
+           return "Thunder" ;
        }
     }
 }
