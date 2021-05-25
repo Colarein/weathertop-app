@@ -49,31 +49,31 @@ public class LatestCalculator {
         }
     }
 
-    public static int latestCode(int code)
+    public static String weatherDescription (int code)
     {
        if (code == 100) {
-           return 100;
+           return "100";
        }
        else if(code == 200){
-           return 200;
+           return "200";
        }
        else if(code == 300){
-           return 300;
+           return "300";
        }
        else if(code == 400){
-           return 400;
+           return "400";
        }
        else if(code == 500){
-           return 500;
+           return "500";
        }
        else if(code == 600){
-           return 600;
+           return "Smelly";
        }
        else if(code == 700){
-           return 700;
+           return "700";
        }
        else {
-           return 800 ;
+           return "800" ;
        }
     }
 }

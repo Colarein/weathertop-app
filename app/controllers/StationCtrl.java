@@ -11,7 +11,7 @@ import java.util.List;
 
 public class StationCtrl extends Controller
 {
-    public static void index(Long id, double latestTemperatureC, double latestTemperatureF, int latestCode)
+    public static void index(Long id)
     {
         Station station = Station.findById(id);
         Logger.info ("Station id = " + id);

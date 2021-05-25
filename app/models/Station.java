@@ -22,6 +22,7 @@ public class Station extends Model
   public double latestPressure;
   public double latestWindSpeed;
   public int latestCode;
+  public String weatherDescription;
 
 
   public Station(String name)
