@@ -4,17 +4,20 @@
 #{menu id:"dashboard"/}
 
 #{list items:stations, as:'station'}
-<h3 class="ui header">
-  <section class="ui six cards">
-    <div class="yellow card">
-      <div class="image">
-        <img>
-        <h4 class="ui header">
-        ${station.name}
-        </h4>
+<h3 class="ui segment">
+  <section class="ui six yellow cards">
+    <div class="ui card">
+      <h4 class="ui header"> ${station.name} </h4>
+      <p>
+        <br>
+        <i class="map marker icon"></i>
+        <br>
+        Lat : ${station.latitude} <br>
+        Lng : ${station.longitude}
+      </p>
       </div>
     </div>
-      <div class="yellow card">
+      <div class="ui card">
         <div class="image">
           <img>
           <h4 class="ui header"></h4>
@@ -32,8 +35,7 @@
         </div>
       </div>
       <div class="yellow card">
-        <div class="image">
-          <img>
+        <i class="wind icon"></i>
           <h4>Wind <br><br>
           ${station.beaufortConversion} <br>
           ${station.latestWindSpeed} bft</h4>
