@@ -24,6 +24,7 @@ public class Dashboard extends Controller {
         station.beaufortConversion = LatestCalculator.beaufortConversion(latestReading.windSpeed);
         station.windCompass = LatestCalculator.windCompass(latestReading.windSpeed);
         station.weatherDescription = LatestCalculator.weatherDescription(latestReading.code);
+        station.windChill = LatestCalculator.windChill(latestReading.temperature, latestReading.windSpeed);
 
       }
     }

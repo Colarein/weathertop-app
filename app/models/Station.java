@@ -25,6 +25,7 @@ public class Station extends Model
   public double latestPressure;
   public double latestWindSpeed;
   public String windCompass;
+  public double windChill;
   public String beaufortConversion;
   public int latestCode;
   public String weatherDescription;

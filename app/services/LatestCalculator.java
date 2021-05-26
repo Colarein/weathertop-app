@@ -127,12 +127,10 @@ public class LatestCalculator {
             return "N";
         }
     }
-//    public static double windChill(double latestTemperatureC, double latestWindSpeed)
-//    {
-//        double windChill;
-//        windChill=  (13.12 + 0.6215 latestTemperatureC – 11.37 (latestWindSpeed^0.16) + 0.3965 latestTemperatureC (latestWindSpeed^0.16)
-//
-//        return windChill;
-//    }
+    public static double windChill(double latestTemperatureC, double latestWindSpeed)
+    {
+        double windChill;
+        windChill = 13.12 + 0.6215*latestTemperatureC - 11.37*Math.pow(latestWindSpeed, 0.16) + 0.3965*latestTemperatureC * Math.pow(latestWindSpeed, 0.16);
+        return windChill;
+    }
 }
-
