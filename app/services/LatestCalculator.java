@@ -76,4 +76,63 @@ public class LatestCalculator {
            return "Thunder" ;
        }
     }
+    public static String windCompass(double windDirection){
+
+         if (windDirection >=11.25 || windDirection < 33.75){
+            return "NNE";
+        }
+        else if (windDirection >=33.75 || windDirection < 56.25){
+            return "NE";
+        }
+        else if (windDirection >=56.25 || windDirection < 78.75){
+            return "ENE";
+        }
+        else if (windDirection >=78.75 || windDirection < 101.25){
+            return "E";
+        }
+        else if (windDirection >=101.25 || windDirection < 123.75){
+            return "ESE";
+        }
+        else if (windDirection >=123.75 || windDirection < 146.25){
+            return "SE";
+        }
+        else if (windDirection >=146.25 || windDirection < 168.75){
+            return "SSE";
+        }
+        else if (windDirection >=168.75 || windDirection < 191.25){
+            return "S";
+        }
+        else if (windDirection >=191.25 || windDirection < 213.75){
+            return "SSW";
+        }
+        else if (windDirection >=213.75 || windDirection < 236.25){
+            return "SW";
+        }
+        else if (windDirection >=236.25 || windDirection < 258.75){
+            return "WSW";
+        }
+        else if (windDirection >=258.75 || windDirection < 281.25){
+            return "W";
+        }
+        else if (windDirection >=281.25 || windDirection < 303.75){
+            return "WNW";
+        }
+        else if (windDirection >=303.75 || windDirection < 326.25){
+            return "NW";
+        }
+        else if (windDirection >=326.25 || windDirection < 348.75){
+            return "NNW";
+        }
+        else{
+            return "N";
+        }
+    }
+//    public static double windChill(double latestTemperatureC, double latestWindSpeed)
+//    {
+//        double windChill;
+//        windChill=  (13.12 + 0.6215 latestTemperatureC – 11.37 (latestWindSpeed^0.16) + 0.3965 latestTemperatureC (latestWindSpeed^0.16)
+//
+//        return windChill;
+//    }
 }
+

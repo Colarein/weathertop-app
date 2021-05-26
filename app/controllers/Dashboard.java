@@ -22,6 +22,7 @@ public class Dashboard extends Controller {
         station.latestPressure = latestReading.pressure;
         station.latestWindSpeed = latestReading.windSpeed;
         station.beaufortConversion = LatestCalculator.beaufortConversion(latestReading.windSpeed);
+        station.windCompass = LatestCalculator.windCompass(latestReading.windSpeed);
         station.weatherDescription = LatestCalculator.weatherDescription(latestReading.code);
 
       }
