@@ -12,10 +12,11 @@ public class Dashboard extends Controller {
   public static void index(Long id) {
     Logger.info("Rendering Admin");
     List<Station> stations = Station.findAll();
+    Logger.info ("Stations Check" + stations);
 
     for (Station station : stations) {
       List<Reading> readings = station.readings;
-      System.out.println("Here ya go" + station.readings);
+      Logger.info ("Readings Check" + station.readings);
       if (readings.size() > 0) {
         Reading latestReading = readings.get(readings.size() - 1);
         station.latestTemperatureC = latestReading.temperature;
