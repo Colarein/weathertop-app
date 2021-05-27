@@ -15,6 +15,7 @@ public class Dashboard extends Controller {
 
     for (Station station : stations) {
       List<Reading> readings = station.readings;
+      System.out.println("Here ya go" + station.readings);
       if (readings.size() > 0) {
         Reading latestReading = readings.get(readings.size() - 1);
         station.latestTemperatureC = latestReading.temperature;
