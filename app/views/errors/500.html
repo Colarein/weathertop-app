@@ -1,24 +1,15 @@
-<table class="ui fixed table">
-  <thead>
-  <tr>
-    <th>Code</th>
-    <th>Temp</th>
-    <th>Wind Speed</th>
-  </tr>
-  </thead>
-  <tbody>
-  #{list items:station.readings, as:'reading'}
-  <tr>
-    <td>
-      ${reading.code}
-    </td>
-    <td>
-      ${reading.temp}
-    </td>
-    <td>
-      ${reading.windSpeed}
-    </td>
-  </tr>
-  #{/list}
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Error</title>
+</head>
+<body>
+#{if play.mode.name() == 'DEV'}
+  #{404 result /}
+#{/if}
+#{else}
+<h1>Server Error</h1>
+<p>${result.message}</p>
+#{/else}
+</body>
+</html>
